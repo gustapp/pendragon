@@ -1,0 +1,24 @@
+<p-carousel headerText="Ofertas" [value]="products">
+  <ng-template let-product pTemplate="item">
+    <div class="ui-grid ui-grid-responsive" style="text-align:center">
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-12"><img src="http://varma.tax/images/production-info-graphic-hom.png" width="200"></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-12">
+          <button type="button" pButton icon="pi pi-search" (click)="selectProduct($event, product)"></button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
+<p-dialog header="Product Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" width="225" (onAfterHide)="onDialogHide()">
+  <div class="ui-g" *ngIf="selectedProduct">
+    <div class="ui-g-12" style="text-align:center">
+      <img src="http://varma.tax/images/production-info-graphic-hom.png">
+    </div>
+    <div class="ui-g-4">Label: </div>
+    <div class="ui-g-8">{{selectedProduct.label}}</div>
+  </div>
+</p-dialog>
