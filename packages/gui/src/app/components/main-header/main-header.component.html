@@ -1,0 +1,14 @@
+<div class="ui-helper-clearfix">
+    <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">My Shop</span>
+    <button style='float:right;' type="button" pButton icon="pi pi-shopping-cart" (click)="op1.toggle($event)"></button>
+    <p-overlayPanel #op1>
+        <ag-grid-angular 
+          style="width: 500px; height: 500px;" 
+          class="ag-theme-balham-dark"
+          [enableSorting]="true"
+          [enableFilter]="true"
+          [rowData]="rowData" 
+          [columnDefs]="columnDefs">
+        </ag-grid-angular>
+    </p-overlayPanel>
+  </div>
