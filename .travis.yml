@@ -2,7 +2,8 @@
   "language": "node_js",
   "node_js": "8",
   "before_script": [
-    "npm install -g @angular/cli"
+    "npm install -g @angular/cli",
+    "npm install -g jest"
   ],
   "script": [
     "lerna bootstrap",
