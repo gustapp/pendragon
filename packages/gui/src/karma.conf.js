@@ -43,7 +43,7 @@ module.exports = function (config) {
         }
       },
     },
-    reporters: ['progress', 'kjhtml', 'spec'],
+    reporters: ['spec'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

@@ -16,7 +16,6 @@
     "app/components/main-header/main-header.component.spec.ts",
     "app/components/sale-carousel/sale-carousel.component.spec.ts",
     "app/components/sale-gallery/sale-gallery.component.spec.ts"
-
   ],
   "include": [
     "**/*.spec.ts",
