@@ -20,7 +20,8 @@
     "debug": "npm run build && npm run watch-debug",
     "serve-debug": "nodemon --inspect dist/server.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"npm run watch-ts\" \"npm run serve-debug\"",
-    "doc": "compodoc -p tsconfig.json --coverageTest --coverageTestThresholdFail false -d '../../docs/functions' -n 'Pendragon Functions Docs'"
+    "doc": "compodoc -p tsconfig.json --coverageTest --coverageTestThresholdFail false -d '../../docs/functions' -n 'Pendragon Functions Docs'",
+    "codecov": "codecov"
   },
   "repository": {
     "type": "git",

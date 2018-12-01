@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint --fix",
     "e2e": "ng e2e",
-    "doc": "compodoc -p src/tsconfig.app.json --coverageTest --coverageTestThresholdFail false -d '../../docs/gui' -n 'Pendragon GUI Docs'"
+    "doc": "compodoc -p src/tsconfig.app.json --coverageTest --coverageTestThresholdFail false -d '../../docs/gui' -n 'Pendragon GUI Docs'",
+    "codecov": "codecov"
   },
   "private": true,
   "dependencies": {
