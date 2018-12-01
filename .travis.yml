@@ -7,7 +7,7 @@
   ],
   "script": [
     "lerna bootstrap",
-    "lerna run build",
+    "lerna exec -- npm run build",
     "lerna exec -- npm run test"
   ]
 }
