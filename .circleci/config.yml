@@ -38,10 +38,13 @@ jobs:
           command: 'lerna exec -- npm run build'
   test:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:8.10
 
     steps:
       - checkout
+      - run:
+          name: Update lerna
+          command: 'sudo npm install -g lerna'
       - run:
           name: Update jest
           command: 'sudo npm install -g jest'
