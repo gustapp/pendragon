@@ -4,7 +4,8 @@
   "before_script": [
     "npm install -g @angular/cli",
     "npm install -g jest",
-    "npm install -g codecov"
+    "npm install -g codecov",
+    "npm install -g coveralls"
   ],
   "script": [
     "lerna bootstrap",
