@@ -12,21 +12,48 @@ jobs:
 
     steps:
       - checkout
-
-      # Download and cache dependencies
+      - run:
+          name: Update lerna
+          command: 'npm install -g lerna'
+      - run:
+          name: Update angular-cli
+          command: 'npm install -g @angular/cli'
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-
-      - run: lerna install
-
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Bootstrap project
+          command: lerna bootstrap
       - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      - run: lerna run test
+      - run:
+          name: Build project
+          command: 'lerna exec -- npm run build'
+  test:
+    docker:
+      - image: circleci/node:7.10
 
+    steps:
+      - checkout
+      - run:
+          name: Update jest
+          command: 'npm install -g jest'
+      - run:
+          name: Update codecov
+          command: 'npm install -g codecov'
+      - run:
+          name: Test
+          command: lerna exec -- npm run test
+      - store_artifacts:
+          path: packages/*/coverage
+          prefix: coverage
 
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
