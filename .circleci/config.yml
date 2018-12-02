@@ -46,6 +46,9 @@ jobs:
           name: Update lerna
           command: 'sudo npm install -g lerna'
       - run:
+          name: Update angular-cli
+          command: 'sudo npm install -g @angular/cli'
+      - run:
           name: Update jest
           command: 'sudo npm install -g jest'
       - run:
