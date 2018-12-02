@@ -18,6 +18,9 @@ jobs:
       - run:
           name: Update angular-cli
           command: 'sudo npm install -g @angular/cli'
+      - run:
+          name: Update typescript
+          command: 'sudo npm install -g typescript'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
