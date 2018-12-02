@@ -36,21 +36,6 @@ jobs:
       - run:
           name: Build project
           command: 'lerna exec -- npm run build'
-  test:
-    docker:
-      - image: circleci/node:8.10
-
-    steps:
-      - checkout
-      - run:
-          name: Update lerna
-          command: 'sudo npm install -g lerna'
-      - run:
-          name: Update angular-cli
-          command: 'sudo npm install -g @angular/cli'
-      - run:
-          name: Update typescript
-          command: 'sudo npm install -g typescript'
       - run:
           name: Update jest
           command: 'sudo npm install -g jest'
@@ -60,27 +45,12 @@ jobs:
       - run:
           name: Update coveralls
           command: 'sudo npm install -g coveralls'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Bootstrap project
-          command: lerna bootstrap
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
       - run:
           name: Test
           command: lerna exec -- npm run test
-      - store_artifacts:
-          path: packages/*/coverage
-          prefix: coverage
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
