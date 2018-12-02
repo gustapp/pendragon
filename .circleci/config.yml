@@ -51,15 +51,9 @@ jobs:
       - run:
           name: Update codecov
           command: 'sudo npm install -g codecov'
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Bootstrap project
-          command: lerna bootstrap
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+          name: Update codecov
+          command: 'sudo npm install -g coveralls'
       - run:
           name: Test
           command: lerna exec -- npm run test
