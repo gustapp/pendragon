@@ -36,18 +36,6 @@ jobs:
       - run:
           name: Build project
           command: 'lerna exec -- npm run build'
-      - run:
-          name: Update jest
-          command: 'sudo npm install -g jest'
-      - run:
-          name: Update codecov
-          command: 'sudo npm install -g codecov'
-      - run:
-          name: Update coveralls
-          command: 'sudo npm install -g coveralls'
-      - run:
-          name: Test
-          command: lerna exec -- npm run test
 
 workflows:
   version: 2
