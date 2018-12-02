@@ -21,6 +21,9 @@ jobs:
       - run:
           name: Update typescript
           command: 'sudo npm install -g typescript'
+      - run:
+          name: Update tslint
+          command: 'sudo npm install -g tslint'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
