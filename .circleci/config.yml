@@ -14,10 +14,10 @@ jobs:
       - checkout
       - run:
           name: Update lerna
-          command: 'npm install -g lerna'
+          command: 'sudo npm install -g lerna'
       - run:
           name: Update angular-cli
-          command: 'npm install -g @angular/cli'
+          command: 'sudo npm install -g @angular/cli'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -38,10 +38,10 @@ jobs:
       - checkout
       - run:
           name: Update jest
-          command: 'npm install -g jest'
+          command: 'sudo npm install -g jest'
       - run:
           name: Update codecov
-          command: 'npm install -g codecov'
+          command: 'sudo npm install -g codecov'
       - run:
           name: Test
           command: lerna exec -- npm run test
