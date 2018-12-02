@@ -23,7 +23,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
-      reports: ['html', 'lcovonly', 'text', 'text-summary'],
+      reports: ['html', 'lcovonly', 'text', 'text-summary', 'text-lcov'],
       fixWebpackSourcePaths: true,
       thresholds: {
         emitWarning: true, // set to `true` to not fail the test command when thresholds are not met

@@ -10,6 +10,7 @@
     "@compodoc/compodoc": "^1.1.6",
     "@types/node": "^10.12.7",
     "codecov": "^3.1.0",
+    "coveralls": "^3.0.2",
     "lerna": "^3.4.3",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
