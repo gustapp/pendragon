@@ -21,7 +21,9 @@
     "serve-debug": "nodemon --inspect dist/server.js",
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"npm run watch-ts\" \"npm run serve-debug\"",
     "doc": "compodoc -p tsconfig.json --coverageTest --coverageTestThresholdFail false -d '../../docs/functions' -n 'Pendragon Functions Docs'",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -53,7 +55,8 @@
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "path": "^0.12.7",
-    "winston": "^3.1.0"
+    "winston": "^3.1.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -74,5 +77,6 @@
     "shelljs": "^0.8.3",
     "supertest": "^3.3.0",
     "ts-jest": "^23.10.4"
-  }
+  },
+  "snyk": true
 }
